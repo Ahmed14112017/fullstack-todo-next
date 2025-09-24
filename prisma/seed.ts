@@ -1,5 +1,4 @@
 import { PrismaClient } from "../node_modules/prisma/prisma-client/default";
-import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
 
@@ -18,14 +17,14 @@ async function main() {
   //     };
   //   }),
   // });
-  await prisma.todo.createMany({
-    data: Array.from({ length: 25 }, () => {
-      return {
-        title: faker.lorem.words({ min: 5, max: 10 }),
-        body: faker.lorem.words({ min: 10, max: 80 }),
-      };
-    }),
-  });
+  // await prisma.todo.createMany({
+  //   data: Array.from({ length: 25 }, () => {
+  //     return {
+  //       title: faker.lorem.words({ min: 5, max: 10 }),
+  //       body: faker.lorem.words({ min: 10, max: 80 }),
+  //     };
+  //   }),
+  // });
 }
 
 main()
