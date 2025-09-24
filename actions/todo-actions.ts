@@ -34,7 +34,7 @@ export const CreatTodoListAction = async ({
       title,
       body,
       completed,
-      user_id: userid,
+      user_id: userid as string,
     },
   });
   revalidatePath("/");
