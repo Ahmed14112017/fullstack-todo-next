@@ -23,23 +23,11 @@ console.log(
   process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 );
 
-const clerkKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (!clerkKey) {
-    console.error("❌ Clerk publishable key is missing");
-    return (
-      <html>
-        <body>
-          <h1>Server config error</h1>
-        </body>
-      </html>
-    );
-  }
   return (
     <ClerkProvider>
       <html lang="en">
